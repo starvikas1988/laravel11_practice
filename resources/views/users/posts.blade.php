@@ -1,6 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Users Post</h2>
+    </x-slot>
 <h1>Posts by {{ $user->name }}</h1>
 <table>
     <tr>
@@ -17,4 +18,4 @@
     @endforeach
 </table>
 <a href="{{ route('users.index') }}">Back to Users</a>
-@endsection
+</x-app-layout>

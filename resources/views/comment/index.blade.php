@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appdata')
 @section('title', 'Comments')   
 @section('content')
 <h1>Comments</h1>

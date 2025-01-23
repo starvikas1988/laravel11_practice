@@ -1,7 +1,8 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Category</h2>
+    </x-slot>
 
-@section('content')
-<h1>Category</h1>
 <a href="{{ route('category.create') }}" class="btn btn-success"> Create category</a>
 
 @if (session('success'))
@@ -46,4 +47,4 @@
     </tbody>
 </table>
 
-@endsection
+</x-app-layout>

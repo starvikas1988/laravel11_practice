@@ -1,9 +1,8 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Edit Post</h2>
+    </x-slot>
 
-@section('title', 'Edit Post')
-
-@section('content')
-<h1>Edit Post</h1>
 
 <!-- Show validation errors if any -->
 @if ($errors->any())
@@ -57,4 +56,4 @@
     <button type="submit" class="btn btn-primary">Update Post</button>
     <a href="{{ route('posts.index') }}" class="btn btn-secondary">Cancel</a>
 </form>
-@endsection
+</x-app-layout>

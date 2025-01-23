@@ -1,8 +1,7 @@
-@extends('layouts/app')
-
-@section('content')
-
-<h1>Category</h1>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Category</h2>
+    </x-slot>
 
 @if (isset($category))
     <h2>{{ $category->name }}</h2>
@@ -12,4 +11,4 @@
     
 @endif
 
-@endsection
+</x-app-layout>

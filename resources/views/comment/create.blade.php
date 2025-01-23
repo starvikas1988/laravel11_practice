@@ -1,8 +1,7 @@
-@extends('layouts.app')
-
-@section('title' , 'Add Comment')
-@section('content')
-
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Add a New Comment</h2>
+    </x-slot>
 <h1>Add a New Comment</h1>
 <p><strong>Post Title:</strong> {{ $post->title }}</p>
 
@@ -46,4 +45,4 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-@endsection
+</x-app-layout>

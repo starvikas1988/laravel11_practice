@@ -20,6 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Paginator::useBootstrap(); //use this to avoid the arrow design mismatch
+       // Paginator::useBootstrap(); //use this to avoid the arrow design mismatch
     }
 }

@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'My Laravel App')</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Social Network</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('users.index') }}">Users</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('comment.index') }}">Comments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('category.index') }}">Category</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <div class="container mt-4">
-        @yield('content')
-    </div>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <footer class="text-center mt-4">
-        <p>&copy; {{ date('Y') }} Vikas Social Network Laravel App</p>
-    </footer>
+        <!-- Bootstrap CSS (Always Loaded) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <!-- Tailwind CSS (Optional: Load Only If Needed) -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Custom Styles -->
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <!-- Navigation -->
+        @include('layouts.navigation')
+       
+        <!-- Page Heading -->
+        @if (isset($header))
+            <header class="bg-white shadow py-3">
+                <div class="container">
+                    <h2 class="text-dark">{{ $header }}</h2>
+                </div>
+            </header>
+        
+            
+        @endif
+
+        <!-- Page Content -->
+        <main class="container mt-4">
+            {{ $slot }}
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-4 p-3 bg-light">
+            <p>&copy; {{ date('Y') }} Laravel Application</p>
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </body>
 </html>

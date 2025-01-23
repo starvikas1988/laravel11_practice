@@ -1,7 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
-<h1>Edit category</h1>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Edit category</h2>
+    </x-slot>
 
 <!-- Show validation errors if any -->
 
@@ -34,4 +34,4 @@
    <button type='submit' class="btn btn-primary">Submit</button>
    <a href="{{ route('category.index') }}" class="btn btn-secondary">Cancel</a>
 </form>
-@endsection
+</x-app-layout>

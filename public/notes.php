@@ -1,5 +1,36 @@
 <?php
 
+git steps:
+
+# Step 1: Start from master and update it
+git checkout master
+git pull origin master  # Pull latest changes from GitHub
+
+# Step 2: Create a new feature branch
+git checkout -b feature/user-auth
+
+# Step 3: Work on your feature, then add and commit changes
+git add .
+git commit -m "Add user authentication feature"
+
+# Step 4: Push the feature branch to remote
+git push origin feature/user-auth
+
+# Step 5: Create a Pull Request (PR) on GitHub (or use GitHub CLI)
+gh pr create --base master --head feature/user-auth --title "Add user authentication" --body "This PR adds user authentication."
+
+# Step 6: Merge the PR via GitHub UI or CLI
+gh pr merge --merge
+
+# Step 7: Switch back to master and pull the latest changes
+git checkout master
+git pull origin master
+
+# Step 8: Delete the feature branch locally and remotely
+git branch -d feature/user-auth
+git push origin --delete feature/user-auth
+
+
 1. Use toSql()
 The toSql() method shows the raw SQL query generated, but it doesn’t include bindings (parameters). Modify the query to inspect the SQL:
 

@@ -1,10 +1,7 @@
-@extends('layouts.app')
-
-@section('title','Add User')
-
-@section('content')
-
-<h1>Add User</h1>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Add User</h2>
+    </x-slot>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -58,4 +55,4 @@
 
 </form>
 
-@endsection
+</x-app-layout>

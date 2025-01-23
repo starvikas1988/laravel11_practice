@@ -1,7 +1,8 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Create Categoryt</h2>
+    </x-slot>
 
-@section('content')
-<h1>Create Category</h1>
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -29,4 +30,4 @@
     <a href="{{ route('category.index') }}" class="btn btn-secondary">Cancel</a>
 
 </form>
-@endsection
+</x-app-layout>

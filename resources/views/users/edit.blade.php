@@ -1,8 +1,7 @@
-@extends('layouts.app')
-
-@section('title','Edit user')
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Edit Users</h2>
+    </x-slot>
 @if ($errors->any())
 <div class="alert alert-danger">
     <ul>
@@ -38,4 +37,4 @@
     <button type="submit" class="btn btn-primary">Save</button>
 
 </form>
-@endsection
+</x-app-layout>

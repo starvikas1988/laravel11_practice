@@ -1,6 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Show Post</h2>
+    </x-slot>
 <h1>{{ $post->title }}</h1>
 <p><strong>Author:</strong> {{ $post->user->name }}</p>
 <p>{{ $post->content }}</p>
@@ -23,4 +24,4 @@
 
 &nbsp;
 <a href="{{ route('users.posts', $post->user) }}">Back to Posts</a>
-@endsection
+</x-app-layout>

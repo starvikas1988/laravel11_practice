@@ -1,9 +1,8 @@
-@extends('layouts.app')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="h4 text-dark">Featured Posts</h2>
+    </x-slot>
 
-@section('title', 'Featured Posts')
-
-@section('content')
-<h1>Featured Posts</h1>
 <a href="{{ route('posts.index') }}" class="btn btn-secondary mb-3">Back to All Posts</a>
 
 @if ($posts->isEmpty())
@@ -33,4 +32,4 @@
         </tbody>
     </table>
 @endif
-@endsection
+</x-app-layout>
